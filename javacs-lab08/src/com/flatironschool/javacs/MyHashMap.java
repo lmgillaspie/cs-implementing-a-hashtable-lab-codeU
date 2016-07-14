@@ -1,5 +1,5 @@
 /**
- * 
+ * Edited by Lindsey Gillaspie
  */
 package com.flatironschool.javacs;
 
@@ -40,8 +40,20 @@ public class MyHashMap<K, V> extends MyBetterMap<K, V> implements Map<K, V> {
 	 * 
 	 */
 	protected void rehash() {
-        // TODO: fill this in.
-        throw new UnsupportedOperationException();
+        // Completed this method
+		// Collect the entries in the tables
+		List<MyLinearMap<K,V>> oldMaps = maps;
+		
+		// Resize the table
+		int newK = maps.size()*2;
+		makeMaps(newK);
+
+		// Put the entries back in
+		for (MyLinearMap<K,V> map: oldMaps) {
+			for (Map.Entry<K,V> entry: map.getEntries()) {
+				put(entry.getKey(), entry.getValue());
+			}
+		}
 	}
 
 	/**

@@ -60,7 +60,8 @@ public class ProfileMapPut {
 		int endMillis = 5000;
 		runProfiler("MyHashMap put", timeable, startN, endMillis);
 	}
-	
+
+
 	/**
 	 * Runs the profiles and displays results.
 	 * 
